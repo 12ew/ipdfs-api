@@ -1,13 +1,8 @@
 class Api::V1::AuthorsController < ApplicationController
   before_action :find_author, only: [:update]
 
-  def authors
-    @authors = Author.all
-    render json: @authors
-  end
-
   def index
-    @authors = Author.where(author_id: params[:author_id])
+    @authors = Author.all
     render json: @authors
   end
 
@@ -19,7 +14,7 @@ class Api::V1::AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
     if @author.save
-      render json: @author, status: :accepted
+      render json: @author, status: :accepted, notice: 'Successfully created an author.'
     else
       render json: { errors: @author.errors.full_messages }, status: :unprocessible_entity
     end
@@ -28,7 +23,7 @@ class Api::V1::AuthorsController < ApplicationController
   def update
     @author.update(author_params)
     if @author.save
-      render json: @author, status: :accepted
+      render json: @author, status: :accepted, notice: 'Successfully updated author.'
     else
       render json: { errors: @author.errors.full_messages }, status: :unprocessible_entity
     end
