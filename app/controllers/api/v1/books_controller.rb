@@ -23,6 +23,9 @@ class Api::V1::BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    @book.image.attach(params[:book][:image]) #use this to attach an image to an existing book
+    @book.image.attach(params[:book][:file]) #use this to attach a file to an existing book
+    
     if @book.save
       render json: @book, status: :accepted, notice: 'Successfully created a book.'
     else
@@ -42,7 +45,7 @@ class Api::V1::BooksController < ApplicationController
   private
 
   def book_params
-    params.permit(:eng_title, :arabic_title, :language, :about, :harakat, :num_pages, :translator, :genre_id, :author_id)
+    params.permit(:eng_title, :arabic_title, :language, :about, :harakat, :num_pages, :translator, :genre_id, :author_id, :image, :file)
   end
 
   def find_book
