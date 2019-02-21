@@ -1,18 +1,8 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:update]
 
-  def books
-    @books = Book.all
-    render json: @books
-  end
-
-  def authors_books
-    @books = Book.where(author_id: params[:author_id])
-    render json: @books
-  end
-
   def index # books by genre
-    @books = Book.where(genre_id: params[:genre_id])
+    @books = Book.all
     render json: @books
   end
 
@@ -25,7 +15,7 @@ class Api::V1::BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.image.attach(params[:book][:image]) #use this to attach an image to an existing book
     @book.image.attach(params[:book][:file]) #use this to attach a file to an existing book
-    
+
     if @book.save
       render json: @book, status: :accepted, notice: 'Successfully created a book.'
     else
