@@ -1,5 +1,5 @@
 class Api::V1::BooksController < ApplicationController
-  before_action :find_book, only: [:update]
+  before_action :find_book, only: [:update, :destroy]
 
   def index # books by genre
     @books = Book.all
@@ -27,6 +27,15 @@ class Api::V1::BooksController < ApplicationController
     @book.update(book_params)
     if @book.save
       render json: @book, status: :accepted, notice: 'Successfully updated book.'
+    else
+      render json: { errors: @book.errors.full_messages }, status: :unprocessible_entity
+    end
+  end
+
+  def destroy
+    @book.destroy
+    if @book.destroy
+      render json: @book, status: :accepted, notice: 'Successfully deleted book.'
     else
       render json: { errors: @book.errors.full_messages }, status: :unprocessible_entity
     end
