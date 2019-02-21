@@ -1,5 +1,8 @@
 class Author < ApplicationRecord
   has_many :books
   has_many :genres, through: :books
-  belongs_to :user
+
+  validates :name, presence: true
+  validates :bio, presence: true
+  validates :yod, presence: true
 end

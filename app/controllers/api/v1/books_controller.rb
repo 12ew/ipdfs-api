@@ -1,7 +1,7 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:update, :destroy]
 
-  def index # books by genre
+  def index # get all books
     @books = Book.all
     render json: @books
   end
