@@ -1,6 +1,11 @@
 class Api::V1::BooksController < ApplicationController
   before_action :find_book, only: [:update, :destroy]
 
+  def all_books
+    @books = Book.all
+    render json: @books
+  end 
+
   def index # get all books
     if params[:genre_id]
       @books = Book.where(:genre_id => params[:genre_id])
