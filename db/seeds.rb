@@ -37,3 +37,6 @@ Majmoo_al_kutoob = Book.create(author_id: Sh_Rabee.id, genre_id: Hadeeth.id, eng
 Marhaban_yaa_taalib = Book.create(author_id: Sh_Rabee.id, genre_id: Hadeeth.id, eng_title: "MARHABAAN YA TAALIB AL-'ILM - SHAYKH RABEE' AL-MADKHALI", arabic_title: "مرحبان يا طالب العلم ـ الشيخ ربيع بن هادي المدخلي
 ", language: "Arabic", harakat: "true", num_pages: 488, translator: "n/a", about: "Series of several Risala and Nasiha directed to Students in Science, and many questions answered.")
 
+# USERS
+
+Abu_Abdullaah = User.create(name: "Abu Abdullaah", email: "abuabdullaah86@gmail.com", password: "AllaahuAkbar!")
