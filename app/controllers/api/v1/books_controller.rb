@@ -22,8 +22,8 @@ class Api::V1::BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.image.attach(params[:book][:image]) #use this to attach an image to an existing book
-    @book.image.attach(params[:book][:file]) #use this to attach a file to an existing book
+    # @book.image.attach(params[:book][:image]) #use this to attach an image to an existing book
+    # @book.image.attach(params[:book][:file]) #use this to attach a file to an existing book
 
     if @book.save
       render json: @book, status: :accepted, notice: 'Successfully created a book.'
