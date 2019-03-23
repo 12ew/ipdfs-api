@@ -8,8 +8,8 @@
 
 # USERS
 
-Modou_Lo = User.create(name: "Abu Abdullaah", email: "modoulo99@outlook.com", password: "AllaahuAkbar!")
-Abdul_Moeed = User.create(name: "Abu Abdullaah", email: "mahmad1025@gmail.com", password: "AllaahuAkbar!")
+Modou_Lo = User.create(name: "Modou Lo", email: "modoulo99@outlook.com", password: "AllaahuAkbar!")
+Abdul_Moeed = User.create(name: "Abdul Moeed", email: "mahmad1025@gmail.com", password: "AllaahuAkbar!")
 Abu_Abdullaah = User.create(name: "Abu Abdullaah", email: "abuabdullaah86@gmail.com", password: "AllaahuAkbar!")
-Sunnah_Pdfs = User.create(name: "Abu Abdullaah", email: "sunnahpdfs@gmail.com", password: "ALLAAHistheGREATEST1!")
-spdfs = User.create(name: "Abu Abdullaah", email: "spdfs@gmail.com", password: "AllaahuAkbar!")
+Sunnah_Pdfs = User.create(name: "Sunnah PDFs", email: "sunnahpdfs@gmail.com", password: "ALLAAHistheGREATEST1!")
+spdfs = User.create(name: "SPDFs", email: "spdfs@gmail.com", password: "AllaahuAkbar!")
